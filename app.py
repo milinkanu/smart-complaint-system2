@@ -766,6 +766,15 @@ def create_admin_user():
         db.session.commit()
         print("Admin user created: admin@college.com / admin123")
 
+# Initialize database if running on Vercel
+if os.environ.get('VERCEL') == '1':
+    with app.app_context():
+        try:
+            db.create_all()
+            create_default_categories()
+            create_admin_user()
+        except Exception as e:
+            print(f"Database initialization error: {e}")
 
 if __name__ == '__main__':
     # Create database tables
@@ -776,5 +785,3 @@ if __name__ == '__main__':
     
     # Run the application
     app.run(debug=True, host='127.0.0.1', port=5000)
-    with app.app_context():
-         db.create_all()
