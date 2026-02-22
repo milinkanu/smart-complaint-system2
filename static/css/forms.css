@@ -28,6 +28,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -56,7 +57,8 @@
 
 /* ===== Auth Form ===== */
 .auth-form .mb-3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    /* Give input groups more breathing room */
 }
 
 .auth-form .form-label {
@@ -73,7 +75,8 @@
 }
 
 .auth-form .form-control {
-    padding: 0.875rem 1rem;
+    padding: 1.25rem 1rem;
+    /* Increased vertical padding to make inputs taller */
     border: 2px solid #e2e8f0;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -279,7 +282,7 @@ textarea.form-control {
     .auth-card {
         padding: 2rem 1.5rem;
     }
-    
+
     .auth-container {
         padding: 1rem;
     }
